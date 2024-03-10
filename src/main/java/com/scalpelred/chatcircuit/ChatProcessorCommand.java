@@ -182,11 +182,23 @@ public class ChatProcessorCommand implements IClientCommand {
             }
             break;
 
+            case "help": {
+                player.sendMessage(ChatCircuit.translateFormat("commands.chatproc.help.header"));
+                for (int i = 0; i < HELP_LINES; i++) {
+                    player.sendMessage(ChatCircuit.translateFormat("commands.chatproc.help.line" + i));
+                }
+                if (Math.random() <= 0.95)
+                    player.sendMessage(ChatCircuit.translateFormat("commands.chatproc.help.bottom"));
+                else player.sendMessage(ChatCircuit.translateFormat("commands.chatproc.help.bottom2"));
+            }
+            break;
+
             default: {
                 player.sendMessage(ChatCircuit.translateFormat("commands.chatproc.unknownaction", args[0]));
             }
         }
     }
+    private static final int HELP_LINES = 9;
 
     private static final int PROCS_PER_PAGE = 5;
     private void printProcPage(int page, EntityPlayerSP player) {

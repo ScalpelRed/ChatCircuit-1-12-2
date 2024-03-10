@@ -20,4 +20,17 @@ commands.chatproc.list.activenow=активен сейчас
 commands.chatproc.list.inactivenow=неактивен сейчас
 commands.chatproc.list.activedefault=активен по умолч.
 commands.chatproc.list.inactivedefault=неактивен по умолч.
-commands.chatproc.list.negativepage=Индекс страницы должен быть больше нуля.
+commands.chatproc.list.negativepage=Номер страницы должен быть больше нуля.
+commands.chatproc.help.header==== Помощь по /chatproc ===
+commands.chatproc.help.line0=/chatproc load <ИМЯ_ФАЙЛА> - загрузить чатпроцессор из файла
+commands.chatproc.help.line1=/chatproc list <PAGE> - вывести станицу списка загруженных чатпроцессоров
+commands.chatproc.help.line2=/chatproc list - /chatproc list 1
+commands.chatproc.help.line3=/chatproc active <NAME> - вывести, активен ли чатпроцессор
+commands.chatproc.help.line4=/chatproc active <NAME> <VALUE> - установить активность чатпроцессора
+commands.chatproc.help.line5=/chatproc defactive <NAME> - вывести, активен ли чатпроцессор по умолчанию
+commands.chatproc.help.line6=/chatproc defactive <NAME> <VALUE> - установить активность чатпроцессора по умолчанию
+commands.chatproc.help.line7=/chatproc index <NAME> <INDEX> - изменить индекс чатпроцессора в списке
+commands.chatproc.help.line8=/chatproc help - отобразить помощь
+commands.chatproc.help.bottom==== конец помощи ===
+commands.chatproc.help.bottom2==== конец помощи, теперь вы сами по себе ===
+

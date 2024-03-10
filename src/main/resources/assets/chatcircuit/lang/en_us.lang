@@ -1,0 +1,23 @@
+commands.chatproc.noargs=Expected action.
+commands.chatproc.noname=Expected chatprocessor name.
+commands.chatproc.unknownaction=Unknown action '%s'.
+commands.chatproc.procnotfound=No chatprocessor '%s' found
+commands.chatproc.active.get.success=Chatprocessor '%s' is active: %b.
+commands.chatproc.active.set.success=Chatprocessor '%s' active was changed to %b.
+commands.chatproc.defactive.get.success=Chatprocessor '%s' is active by default: %b.
+commands.chatproc.defactive.set.success=Chatprocessor '%s' active by default was changed to %b.
+commands.chatproc.reload.noname=Expected chatprocessor file name.
+commands.chatproc.reload.nofile=No chatprocessor '%s' found.
+commands.chatproc.reload.success=Chatprocessor '%s' was reloaded.
+commands.chatproc.reload.error=Error reloading chatprocessor '%s': '%s'
+commands.chatproc.index.noindex=Expected index.
+commands.chatproc.index.success=Index of '%s' was set to %d.
+commands.chatproc.index.notnumber=Expected index, but got '%s'.
+commands.chatproc.list.notnumber=Expected page number, but got '%s'.
+commands.chatproc.list.header==== Active chatprocessors (page %d) ===
+commands.chatproc.list.bottom==== end of page ===
+commands.chatproc.list.activenow=active now
+commands.chatproc.list.inactivenow=inactive now
+commands.chatproc.list.activedefault=active by default
+commands.chatproc.list.inactivedefault=inactive by default
+commands.chatproc.list.negativepage=Page index must be greater than zero

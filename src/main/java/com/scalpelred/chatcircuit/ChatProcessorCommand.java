@@ -112,7 +112,7 @@ public class ChatProcessorCommand implements IClientCommand {
             case "load":
             case "reload": {
                 if (args.length == 1) {
-                    player.sendMessage(ChatCircuit.translateFormat("commands.reload.noname"));
+                    player.sendMessage(ChatCircuit.translateFormat("commands.chatproc.reload.noname"));
                 }
                 else {
                     try {

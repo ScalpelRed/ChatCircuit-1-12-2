@@ -1,0 +1,23 @@
+commands.chatproc.noargs=Ожидалось действие.
+commands.chatproc.noname=Ожидалось имя чатпроцессора.
+commands.chatproc.unknownaction=Неизвестное действие '%s'.
+commands.chatproc.procnotfound=Чатпроцессор '%s' не найден
+commands.chatproc.active.get.success=Чатпроцессор '%s' активен: %b.
+commands.chatproc.active.set.success=Активность чатпроцессора '%s' изменена на %b.
+commands.chatproc.defactive.get.success=Чатпроцессор '%s' активен по умолчанию: %b.
+commands.chatproc.defactive.set.success=Активность по умолчанию чатпроцессора '%s' изменена на %b.
+commands.chatproc.reload.noname=Ожидалось имя файла чатпроцессора.
+commands.chatproc.reload.nofile=Чатпроцессор '%s' не найден.
+commands.chatproc.reload.success=Чатпроцессор '%s' был перезагружен.
+commands.chatproc.reload.error=Ошибка загрузки чатпроцессора '%s': '%s'
+commands.chatproc.index.noindex=Ожидался индекс.
+commands.chatproc.index.success=Индекс чатпроцессора '%s' был изменён на %d.
+commands.chatproc.index.notnumber=Ожидался индекс, но получено '%s'.
+commands.chatproc.list.notnumber=Ожидался номер страницы, но получено '%s'.
+commands.chatproc.list.header==== Активные чатпроцессоры (страница %d) ===
+commands.chatproc.list.bottom==== конец страницы ===
+commands.chatproc.list.activenow=активен сейчас
+commands.chatproc.list.inactivenow=неактивен сейчас
+commands.chatproc.list.activedefault=активен по умолч.
+commands.chatproc.list.inactivedefault=неактивен по умолч.
+commands.chatproc.list.negativepage=Индекс страницы должен быть больше нуля.

@@ -11,7 +11,7 @@ commands.chatproc.reload.nofile=No chatprocessor '%s' found.
 commands.chatproc.reload.success=Chatprocessor '%s' was reloaded.
 commands.chatproc.reload.error=Error reloading chatprocessor '%s': '%s'
 commands.chatproc.index.noindex=Expected index.
-commands.chatproc.index.success=Index of '%s' was set to %d.
+commands.chatproc.index.success=Index of chatprocessor '%s' was set to %d.
 commands.chatproc.index.notnumber=Expected index, but got '%s'.
 commands.chatproc.list.notnumber=Expected page number, but got '%s'.
 commands.chatproc.list.header==== Active chatprocessors (page %d) ===
@@ -20,4 +20,4 @@ commands.chatproc.list.activenow=active now
 commands.chatproc.list.inactivenow=inactive now
 commands.chatproc.list.activedefault=active by default
 commands.chatproc.list.inactivedefault=inactive by default
-commands.chatproc.list.negativepage=Page index must be greater than zero
+commands.chatproc.list.negativepage=Page index must be greater than zero.

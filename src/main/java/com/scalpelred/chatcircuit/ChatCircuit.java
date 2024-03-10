@@ -1,24 +1,19 @@
 package com.scalpelred.chatcircuit;
 
-import com.mojang.realmsclient.client.RealmsClient;
 import net.minecraft.client.resources.I18n;
-import net.minecraft.command.CommandHandler;
 import net.minecraft.util.text.TextComponentString;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.client.ClientCommandHandler;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.ModClassLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import org.apache.logging.log4j.Logger;
 
-import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
-import java.net.URLClassLoader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Properties;
@@ -49,14 +44,14 @@ public class ChatCircuit
 
     }
 
-    @EventHandler
+    /*@EventHandler
     public void serverStarting(FMLServerStartingEvent event) {
-        //event.registerServerCommand(new ChatProcessorCommand(this));
-    }
+        event.registerServerCommand(new ChatProcessorCommand(this));
+    }*/
 
-    private HashArrayList<ChatProcessor> chatProcessors = new HashArrayList<>();
-    private HashArrayList<ChatProcessor> activeProcessors = new HashArrayList<>();
-    private HashArrayList<ChatProcessor> defactiveProcessors = new HashArrayList<>();
+    private final HashArrayList<ChatProcessor> chatProcessors = new HashArrayList<>();
+    private final HashArrayList<ChatProcessor> activeProcessors = new HashArrayList<>();
+    private final HashArrayList<ChatProcessor> defactiveProcessors = new HashArrayList<>();
 
     public ChatProcessor getProcByName(String name) {
         for (ChatProcessor c : chatProcessors) if (c.getName().equals(name)) return c;
@@ -159,7 +154,6 @@ public class ChatCircuit
             inputStream.close();
         }
 
-        //URLClassLoader classLoader = new URLClassLoader(new URL[] {cpfile.toURI().toURL() });
         ModClassLoader classLoader = Loader.instance().getModClassLoader();
         classLoader.addFile(cpfile);
         Class<?> cpclass = classLoader.loadClass(mainClassName);

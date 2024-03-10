@@ -2,15 +2,12 @@ package com.scalpelred.chatcircuit;
 
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.command.*;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.client.IClientCommand;
 
 import javax.annotation.Nullable;
-import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
@@ -57,7 +54,7 @@ public class ChatProcessorCommand implements IClientCommand {
             case "active": {
 
                 if (args.length == 1) {
-                    player.sendMessage(ChatCircuit.translateFormat("commands.chatproc.noname", args[1]));
+                    player.sendMessage(ChatCircuit.translateFormat("commands.chatproc.noname", args[0]));
                 }
                 else if (args.length == 2) { // get
                     ChatProcessor cp = chatCircuit.getProcByName(args[1]);

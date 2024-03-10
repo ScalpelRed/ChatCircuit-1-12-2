@@ -46,9 +46,7 @@ public class ChatCircuit
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-        ChatProcessor cp = new ChatProcessor();
-        cp.setName("abbb");
-        System.out.println(cp);
+
     }
 
     @EventHandler
@@ -138,23 +136,32 @@ public class ChatCircuit
                 activeProcessors.replaceEqual(res);
                 defactiveProcessors.replaceEqual(res);
             }
+            else {
+                chatProcessors.add(res);
+            }
         }
         return res;
     }
 
     private ChatProcessor loadProc(String name, File folder) throws Exception {
-        File modfile = Paths.get(folder.getAbsolutePath(), name + ".jar").toFile();
-        if (!modfile.exists()) return null;
 
-        JarFile jarFile = new JarFile(modfile);
-        JarEntry entry = jarFile.getJarEntry("mainclass.ini");
-        InputStream inputStream = jarFile.getInputStream(entry);
-        Properties properties = new Properties();
-        properties.load(inputStream);
-        String mainClassName = properties.getProperty("mainclass");
-        inputStream.close();
+        File cpfile = Paths.get(folder.getAbsolutePath(), name + ".jar").toFile();
+        if (!cpfile.exists()) return null;
 
-        URLClassLoader classLoader = new URLClassLoader(new URL[] { modfile.toURI().toURL() } );
+        String mainClassName;
+        {
+            JarFile jarFile = new JarFile(cpfile);
+            JarEntry entry = jarFile.getJarEntry("mainclass.ini");
+            InputStream inputStream = jarFile.getInputStream(entry);
+            Properties properties = new Properties();
+            properties.load(inputStream);
+            mainClassName = properties.getProperty("mainclass");
+            inputStream.close();
+        }
+
+        //URLClassLoader classLoader = new URLClassLoader(new URL[] {cpfile.toURI().toURL() });
+        ModClassLoader classLoader = Loader.instance().getModClassLoader();
+        classLoader.addFile(cpfile);
         Class<?> cpclass = classLoader.loadClass(mainClassName);
         ChatProcessor chatProcessor = (ChatProcessor) cpclass.getDeclaredConstructor().newInstance();
 

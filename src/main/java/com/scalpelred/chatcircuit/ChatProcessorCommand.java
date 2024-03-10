@@ -1,6 +1,7 @@
 package com.scalpelred.chatcircuit;
 
 import net.minecraft.client.entity.EntityPlayerSP;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.command.*;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
@@ -205,7 +206,7 @@ public class ChatProcessorCommand implements IClientCommand {
             StringBuilder msg = new StringBuilder();
             int index = i0 + i;
             if (index >= procs.length) break;
-            msg.append(index);
+            msg.append(index + 1);
             msg.append(". ");
 
             ChatProcessor cp = procs[index];
@@ -214,13 +215,13 @@ public class ChatProcessorCommand implements IClientCommand {
             msg.append(" (");
 
             if (chatCircuit.isActive(cp))
-                msg.append(ChatCircuit.translateFormat("commands.chatproc.list.activenow"));
-            else msg.append(ChatCircuit.translateFormat("commands.chatproc.list.inactivenow"));
+                msg.append(I18n.format("commands.chatproc.list.activenow"));
+            else msg.append(I18n.format("commands.chatproc.list.inactivenow"));
             msg.append(", ");
 
             if (chatCircuit.isDefactive(cp))
-                msg.append(ChatCircuit.translateFormat("commands.chatproc.list.activedefault"));
-            else msg.append(ChatCircuit.translateFormat("commands.chatproc.list.inactivedefault"));
+                msg.append(I18n.format("commands.chatproc.list.activedefault"));
+            else msg.append(I18n.format("commands.chatproc.list.inactivedefault"));
 
             msg.append(")");
 
